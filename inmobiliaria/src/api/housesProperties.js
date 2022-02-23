@@ -50,7 +50,7 @@ export const api = [
     rooms: 4,
     bathrooms: 6,
     surface: 245,
-    montlhyCost: 510,
+    montlhyCost: 550,
     score: 4.9,
     img: require('../imgs/house5.jpg'),
   },
