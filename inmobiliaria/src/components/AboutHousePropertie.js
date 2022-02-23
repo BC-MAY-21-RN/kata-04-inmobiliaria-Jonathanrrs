@@ -3,44 +3,25 @@ import {View, Text, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export const AboutHousePropertie = ({house}) => {
-  const PrintIconAndText = ({iconName, styleName, infoText}) => (
-    <>
-      <Icon name={iconName} color="black" size={25} />
-      <Text style={styleName}>{infoText}</Text>
-    </>
-  );
-
   return (
     <View style={styles.containerAbout}>
       <Text style={styles.nameHouse}>{house.name}</Text>
       <View style={styles.containerDirection}>
-        <PrintIconAndText
-          iconName={'location-outline'}
-          styleName={styles.direction}
-          infoText={house.direction}
-        />
+        <Icon name="location-outline" color="black" size={25} />
+        <Text style={styles.direction}>{house.direction}</Text>
       </View>
       <View style={styles.containerAmount}>
         <View style={styles.containerAmoutInfo}>
-          <PrintIconAndText
-            iconName={'bed-outline'}
-            styleName={styles.amount}
-            infoText={house.rooms}
-          />
+          <Icon name="bed-outline" color="black" size={25} />
+          <Text style={styles.amount}>{house.rooms}</Text>
         </View>
         <View style={styles.containerAmoutInfo}>
-          <PrintIconAndText
-            iconName={'water-outline'}
-            styleName={styles.amount}
-            infoText={house.bathrooms}
-          />
+          <Icon name="water-outline" color="black" size={25} />
+          <Text style={styles.amount}>{house.bathrooms}</Text>
         </View>
         <View style={styles.containerAmoutInfo}>
-          <PrintIconAndText
-            iconName={'expand-outline'}
-            styleName={styles.amount}
-            infoText={house.surface}
-          />
+          <Icon name="expand-outline" color="black" size={25} />
+          <Text style={styles.amount}>{house.surface}</Text>
         </View>
       </View>
       <View style={styles.containerPrice}>
