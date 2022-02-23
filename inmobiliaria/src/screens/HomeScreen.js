@@ -1,11 +1,20 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import {ScoreHouse} from '../components/ScoreHouse';
 
 export const HomeScreen = () => {
   return (
-    <View style={{padding: 50}}>
+    <View style={styles.containerCard}>
       <ScoreHouse />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  containerCard: {
+    margin: 20,
+    padding: 15,
+    backgroundColor: 'lightcyan',
+    borderRadius: 10,
+  },
+});
