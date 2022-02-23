@@ -1,14 +1,23 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, FlatList} from 'react-native';
 import {AboutHousePropertie} from '../components/AboutHousePropertie';
 import {ScoreHouse} from '../components/ScoreHouse';
+import {api} from '../api/housesProperties';
 
 export const HomeScreen = () => {
-  return (
+  const renderItem = ({item}) => (
     <View style={styles.containerCard}>
-      <ScoreHouse />
-      <AboutHousePropertie />
+      <ScoreHouse house={item} />
+      <AboutHousePropertie house={item} />
     </View>
+  );
+
+  return (
+    <FlatList
+      data={api}
+      renderItem={renderItem}
+      keyExtractor={item => item.id}
+    />
   );
 };
 
@@ -18,7 +27,6 @@ const styles = StyleSheet.create({
     padding: 15,
     backgroundColor: 'lightcyan',
     borderRadius: 15,
-    // flex: 1,
     flexDirection: 'row',
   },
 });

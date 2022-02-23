@@ -2,30 +2,30 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export const AboutHousePropertie = () => {
+export const AboutHousePropertie = ({house}) => {
   return (
     <View style={styles.containerAbout}>
-      <Text style={styles.nameHouse}>The Willows</Text>
+      <Text style={styles.nameHouse}>{house.name}</Text>
       <View style={styles.containerDirection}>
         <Icon name="location-outline" color="black" size={25} />
-        <Text style={styles.direction}>3518 W. Gray St. Utica</Text>
+        <Text style={styles.direction}>{house.direction}</Text>
       </View>
       <View style={styles.containerAmount}>
         <View style={styles.containerAmoutInfo}>
           <Icon name="bed-outline" color="black" size={25} />
-          <Text style={styles.amount}>3</Text>
+          <Text style={styles.amount}>{house.rooms}</Text>
         </View>
         <View style={styles.containerAmoutInfo}>
           <Icon name="water-outline" color="black" size={25} />
-          <Text style={styles.amount}>2</Text>
+          <Text style={styles.amount}>{house.bathrooms}</Text>
         </View>
         <View style={styles.containerAmoutInfo}>
           <Icon name="expand-outline" color="black" size={25} />
-          <Text style={styles.amount}>230 ft</Text>
+          <Text style={styles.amount}>{house.surface}</Text>
         </View>
       </View>
-      <View style={styles.containerSurface}>
-        <Text style={styles.surface}>$440/m</Text>
+      <View style={styles.containerPrice}>
+        <Text style={styles.surface}>${house.montlhyCost}/m</Text>
         <Icon name="heart-circle" color="green" size={30} />
       </View>
     </View>
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 22,
   },
-  containerSurface: {
+  containerPrice: {
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center',
