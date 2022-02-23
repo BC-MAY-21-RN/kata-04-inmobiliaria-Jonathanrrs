@@ -13,7 +13,7 @@ export const api = [
   {
     id: 2,
     name: 'Orchard House',
-    direction: '3518 W. Gray St. Utica',
+    direction: '120 Vegas Boulevard',
     rooms: 2,
     bathrooms: 1,
     surface: 240,
@@ -24,7 +24,7 @@ export const api = [
   {
     id: 3,
     name: 'The Magic House',
-    direction: '3519 W. Gray St. Utica',
+    direction: '420 Music Row',
     rooms: 4,
     bathrooms: 3,
     surface: 250,
@@ -35,7 +35,7 @@ export const api = [
   {
     id: 4,
     name: 'The King House',
-    direction: '3520 W. Gray St. Utica',
+    direction: '680 Wall Street',
     rooms: 5,
     bathrooms: 5,
     surface: 280,
@@ -46,7 +46,7 @@ export const api = [
   {
     id: 5,
     name: 'The Big House',
-    direction: '3521 W. Gray St. Utica',
+    direction: '1492 5th. Avenue',
     rooms: 4,
     bathrooms: 6,
     surface: 245,
