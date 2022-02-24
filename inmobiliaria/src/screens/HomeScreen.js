@@ -13,11 +13,13 @@ export const HomeScreen = () => {
   );
 
   return (
-    <FlatList
-      data={api}
-      renderItem={renderItem}
-      keyExtractor={item => item.id}
-    />
+    <View style={styles.containerMain}>
+      <FlatList
+        data={api}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
+      />
+    </View>
   );
 };
 
@@ -28,5 +30,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightcyan',
     borderRadius: 15,
     flexDirection: 'row',
+  },
+  containerMain: {
+    backgroundColor: 'white',
   },
 });

@@ -3,29 +3,44 @@ import {View, Text, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export const AboutHousePropertie = ({house}) => {
+  const PrintIcon = ({styleContainer, styleText, textInfo, nameIcon}) => (
+    <View style={styleContainer}>
+      <Icon name={nameIcon} color="black" size={25} />
+      <Text style={styleText}>{textInfo}</Text>
+    </View>
+  );
+
   return (
     <View style={styles.containerAbout}>
       <Text style={styles.nameHouse}>{house.name}</Text>
-      <View style={styles.containerDirection}>
-        <Icon name="location-outline" color="black" size={25} />
-        <Text style={styles.direction}>{house.direction}</Text>
-      </View>
+      <PrintIcon
+        styleContainer={styles.containerDirection}
+        styleText={styles.direction}
+        textInfo={house.direction}
+        nameIcon="location-outline"
+      />
       <View style={styles.containerAmount}>
-        <View style={styles.containerAmoutInfo}>
-          <Icon name="bed-outline" color="black" size={25} />
-          <Text style={styles.amount}>{house.rooms}</Text>
-        </View>
-        <View style={styles.containerAmoutInfo}>
-          <Icon name="water-outline" color="black" size={25} />
-          <Text style={styles.amount}>{house.bathrooms}</Text>
-        </View>
-        <View style={styles.containerAmoutInfo}>
-          <Icon name="expand-outline" color="black" size={25} />
-          <Text style={styles.amount}>{house.surface}</Text>
-        </View>
+        <PrintIcon
+          styleContainer={styles.containerAmoutInfo}
+          styleText={styles.amount}
+          textInfo={house.rooms}
+          nameIcon="bed-outline"
+        />
+        <PrintIcon
+          styleContainer={styles.containerAmoutInfo}
+          styleText={styles.amount}
+          textInfo={house.bathrooms}
+          nameIcon="water-outline"
+        />
+        <PrintIcon
+          styleContainer={styles.containerAmoutInfo}
+          styleText={styles.amount}
+          textInfo={house.surface}
+          nameIcon="expand-outline"
+        />
       </View>
       <View style={styles.containerPrice}>
-        <Text style={styles.surface}>${house.montlhyCost}/m</Text>
+        <Text style={styles.price}>{house.montlhyCost}</Text>
         <Icon name="heart-circle" color="green" size={30} />
       </View>
     </View>
@@ -64,7 +79,7 @@ const styles = StyleSheet.create({
     color: 'black',
     marginLeft: 3,
   },
-  surface: {
+  price: {
     color: 'black',
     fontWeight: 'bold',
     fontSize: 22,
